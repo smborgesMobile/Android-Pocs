@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Playground</string>
+    <string name="first_button_text">Primeiro Botão da Chain</string>
+    <string name="second_button_text">Segundo Botão da Chain</string>
+    <string name="reuse_events">Reuse Events</string>
+    <string name="reuse_booking">Reuse Booking</string>
+    <string name="guidelines">Guidelines</string>
+    <string name="minhas_pocs">MINHAS POCS</string>
+    <string name="minha_lista_de_filmes">Minha Lista de Filmes</string>
+</resources>

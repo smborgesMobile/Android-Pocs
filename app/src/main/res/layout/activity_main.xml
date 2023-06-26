@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimen_spacing_24"
+        android:text="@string/minhas_pocs"
+        android:textSize="@dimen/text_size_24" />
+
+    <Button
+        android:id="@+id/guielines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_spacing_24"
+        android:layout_marginTop="@dimen/dimen_spacing_24"
+        android:text="@string/guidelines" />
+
+    <Button
+        android:id="@+id/reuse_booking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_spacing_24"
+        android:layout_marginVertical="@dimen/dimen_spacing_2dp"
+        android:text="@string/reuse_booking" />
+
+    <Button
+        android:id="@+id/reuse_events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_spacing_24"
+        android:layout_marginVertical="@dimen/dimen_spacing_2dp"
+        android:text="@string/reuse_events" />
+
+</LinearLayout>

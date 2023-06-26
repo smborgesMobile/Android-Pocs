@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_spacing_24">24dp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="dimen_spacing_2dp">2dp</dimen>
+    <dimen name="dimen_spacing_10dp">10dp</dimen>
+</resources>
