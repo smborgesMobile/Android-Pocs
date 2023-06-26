@@ -7,4 +7,8 @@
     <string name="guidelines">Guidelines</string>
     <string name="minhas_pocs">MINHAS POCS</string>
     <string name="minha_lista_de_filmes">Minha Lista de Filmes</string>
+    <string name="carousel_sample">Carousel Sample</string>
+    <string name="empty_state">EMPTY STATE</string>
+    <string name="carousel_02">Carousel 02</string>
+    <string name="carousel_01">Carousel 01</string>
 </resources>

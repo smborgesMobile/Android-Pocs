@@ -3,6 +3,7 @@ package com.example.playground
 import android.app.ActivityOptions
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.playground.carousel.CarouselActivity
 import com.example.playground.databinding.ActivityMainBinding
 import com.example.playground.guidelines.GuidelineActivity
 import com.example.playground.networkcalls.booking.BookingActivity
@@ -38,6 +39,10 @@ class MainActivity : AppCompatActivity() {
                 EventsActivity.getLaunchIntent(this),
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
             )
+        }
+
+        binding.carouselComponent.setOnClickListener {
+            startActivity(CarouselActivity.getLaunchIntent(this))
         }
     }
 }
