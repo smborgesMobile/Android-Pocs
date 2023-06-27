@@ -45,4 +45,12 @@
         android:layout_marginVertical="@dimen/dimen_spacing_2dp"
         android:text="@string/carousel_sample" />
 
+    <Button
+        android:id="@+id/paging"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_spacing_24"
+        android:layout_marginVertical="@dimen/dimen_spacing_2dp"
+        android:text="@string/paging_sample" />
+
 </LinearLayout>

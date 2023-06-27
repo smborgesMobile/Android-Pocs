@@ -17,7 +17,6 @@ class CarouselActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.carouselComponent.itemList = listOf("Item 01", "Item 02", "Item 03", "Item 04")
-        binding.carouselComponentSecond.itemList = listOf()
     }
 
     companion object {

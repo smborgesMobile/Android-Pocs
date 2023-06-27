@@ -7,6 +7,8 @@ import com.example.playground.networkcalls.events.EventsViewModel
 import com.example.playground.networkcalls.repository.NetworkCallEventsRepository
 import com.example.playground.networkcalls.repository.NetworkCallRepository
 import com.example.playground.networkcalls.repository.NetworkCallsBookingRepository
+import com.example.playground.paging.PagingViewModel
+import com.example.playground.paging.repository.ArticleRepository
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -19,8 +21,12 @@ class PlaygroundModuleDI {
             single<NetworkCallRepository>(named(BOOKING_REPOSITORY)) { NetworkCallsBookingRepository() }
             single<OrderBusiness>(named(EVENT_BUSINESS)) { OrderBusinessImpl(get(named(EVENT_REPOSITORY))) }
             single<OrderBusiness>(named(BOOKING_BUSINESS)) { OrderBusinessImpl(get(named(BOOKING_REPOSITORY))) }
+
             viewModel { BookingViewModel(get(named(BOOKING_BUSINESS))) }
             viewModel { EventsViewModel(get(named(EVENT_BUSINESS))) }
+            viewModel { PagingViewModel(repository = get()) }
+
+            factory { ArticleRepository() }
         }
 
     companion object {

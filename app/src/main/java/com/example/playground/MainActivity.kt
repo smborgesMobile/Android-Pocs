@@ -8,6 +8,7 @@ import com.example.playground.databinding.ActivityMainBinding
 import com.example.playground.guidelines.GuidelineActivity
 import com.example.playground.networkcalls.booking.BookingActivity
 import com.example.playground.networkcalls.events.EventsActivity
+import com.example.playground.paging.PagingActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.carouselComponent.setOnClickListener {
             startActivity(CarouselActivity.getLaunchIntent(this))
+        }
+
+        binding.paging.setOnClickListener {
+            startActivity(PagingActivity.getLaunchIntent(this))
         }
     }
 }
