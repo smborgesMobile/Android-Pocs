@@ -1,30 +1,28 @@
 package com.example.playground.paging
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import androidx.paging.cachedIn
 import com.example.playground.paging.entity.Article
 import com.example.playground.paging.repository.ArticleRepository
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 class PagingViewModel(
     private val repository: ArticleRepository
 ) : ViewModel() {
 
-    /**
-     * Stream of [Article]s for the UI.
-     */
-    val items: Flow<PagingData<Article>> = Pager(
-        config = PagingConfig(pageSize = ITEMS_PER_PAGE, enablePlaceholders = false),
-        pagingSourceFactory = { repository.articlePagingRepository() }
-    )
-        .flow
-        .cachedIn(viewModelScope)
+    private val _articlesLiveData = MutableLiveData<PagingData<Article>>()
+    val articlesLiveData: LiveData<PagingData<Article>> = _articlesLiveData
 
-    companion object {
-        private const val ITEMS_PER_PAGE = 50
+    fun loadMore() {
+        viewModelScope.launch {
+            repository.articlePagingRepository().collectLatest {
+                _articlesLiveData.value = it
+            }
+        }
     }
+
 }

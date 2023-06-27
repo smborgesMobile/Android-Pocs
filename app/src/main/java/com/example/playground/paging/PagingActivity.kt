@@ -24,20 +24,15 @@ class PagingActivity : AppCompatActivity() {
     }
 
     private val viewModel: PagingViewModel by viewModel()
-
     private val pagingAdapter: PagingAdapter by lazy { PagingAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setupRecyclerView()
-
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.items.collectLatest {
-                    pagingAdapter.submitData(it)
-                }
-            }
+        viewModel.loadMore()
+        viewModel.articlesLiveData.observe(this) {
+            pagingAdapter.submitData(lifecycle, it)
         }
 
         lifecycleScope.launch {
